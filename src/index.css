@@ -1,0 +1,17 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.charge{
+    background:url('./assets/Images/pokebola.gif')no-repeat;
+    
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+}
+
+.hide{
+    display: none;
+}
