@@ -4,12 +4,18 @@
     box-sizing: border-box;
 }
 
+body{
+    text-align: center;
+}
+
 .charge{
-    background:url('./assets/Images/pokebola.gif')no-repeat;
-    
+ 
+    background: red;
     position: absolute;
+    align-items: center;
     width: 100%;
     height: 100vh;
+   
 }
 
 .hide{
