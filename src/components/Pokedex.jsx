@@ -38,7 +38,7 @@ const Pokedex = () => {
     const lastPokemon = page * pokemonForPage
     const firstPokemon = lastPokemon - pokemonForPage
     const pokemonPagined = setPokemon.slice(firstPokemon,lastPokemon)
-    const totalpages = 
+    
 
     return (
         <div>
