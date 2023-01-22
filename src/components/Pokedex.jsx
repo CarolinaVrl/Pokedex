@@ -15,7 +15,7 @@ const Pokedex = () => {
     const navigate = useNavigate()
     const name = useSelector((state)=> state.trainerName)
     useEffect(()=>{
-        axios.get("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=10")
+        axios.get("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1279")
         .then(res=> setPokemon(res.data.results))
 
         axios.get('https://pokeapi.co/api/v2/type/')
@@ -37,8 +37,12 @@ const Pokedex = () => {
     const pokemonForPage = 9
     const lastPokemon = page * pokemonForPage
     const firstPokemon = lastPokemon - pokemonForPage
-    const pokemonPagined = setPokemon.slice(firstPokemon,lastPokemon)
-    const totalpages = 
+    const pokemonPagined = pokemon.slice(firstPokemon,lastPokemon)
+    const allpages = Math.ceil(pokemon.length / pokemonForPage)
+    const allNumbers = []
+    for (let i=1; i<=allpages;i++){
+        allNumbers.push(i)
+    }
 
     return (
         <div>
@@ -54,12 +58,17 @@ const Pokedex = () => {
                 {}
             </select>
             
-            {pokemon.map(poke=>(
+            {pokemonPagined.map(poke=>(
                 <PokeCard
                 url={poke.url}
                 key={poke.url}
                 />
             ))}
+            <button onClick={()=>setPage(page-1)} disabled={page===1}>Anterior</button>
+            {allNumbers.map(number=>(
+                <button onClick={()=>setPage(number)}>{number}</button>
+            ))}
+            <button onClick={()=>setPage(page+1)} disabled={page === allpages} >Siguiente</button>
             
             
         </div>
