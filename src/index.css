@@ -10,7 +10,7 @@ body{
 
 .charge{
  
-    background: red;
+    background: url('./assets/Images/pokebola.gif');
     position: absolute;
     align-items: center;
     width: 100%;

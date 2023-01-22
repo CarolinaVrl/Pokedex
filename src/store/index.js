@@ -1,8 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
-import trainerSlice from './slice/trainer.slice'
+import trainerNameSlice from './slice/trainerName.slice'
+
 export default configureStore({
     reducer: {
-        trainerSlice
+        trainerName:trainerNameSlice
     
 
     }
