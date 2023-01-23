@@ -13,7 +13,7 @@ const PokeDetails = () => {
     }, [id])
     return (
         <div>
-            <img src={pokemon?.sprites?.other.dream_world.front_default} alt="" />
+            <img src={pokemon?.sprites?.other['official-artwork']?.front_default} alt="" />
             <h4>{pokemon.id}</h4>
             <h1>{pokemon.name}</h1>
             <div> Tipos
@@ -44,6 +44,11 @@ const PokeDetails = () => {
             <div>
                 <h2>Movimientos <span><hr /></span>
                 </h2>
+                {pokemon.moves?.map(move=>(
+                    <div key={move.move.url}>
+                        <div>{move.move.name}</div>
+                    </div>
+                ))}
             </div>
 
 

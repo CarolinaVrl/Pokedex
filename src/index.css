@@ -222,3 +222,6 @@ body{
     color: lightgray;
   }
 
+.inputPaginad{
+  overflow-y: hidden;
+}
