@@ -6,6 +6,8 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import trainerName from '../store/slice/trainerName.slice'
 import PokeCard from './PokeCard';
+import pokedex_logo from '../assets/Images/image 11.png'
+import pokeball from '../assets/Images/Pokeball.png'
 
 const Pokedex = () => {
     const [pokemon, setPokemon] = useState([])
@@ -46,17 +48,23 @@ const Pokedex = () => {
 
     return (
         <div>
-            <h1>Pokedex</h1>
-            <h3>Bienvenido {name}, aprende de el gran mundo Pokemon</h3>
-            <div>
-            <input type="text" value={names} onChange={e=>setNames(e.target.value)}
+            <div className='footer-pokedex'> 
+            <img className='logo-index' src={pokedex_logo} alt="" />
+            <img className='pokeball-index' src={pokeball} alt="" />
+            </div>
+
+            <div className='header-welcome'>
+            <h3 className='welcomes'>Bienvenido {name},<span className='sub-header'> aprende de el gran mundo Pokemon</span></h3>
+            
+            <div className='search-box'>
+            <input type="text" className='input-search'placeholder='Busca un pokemon' value={names} onChange={e=>setNames(e.target.value)}
              />
-             <button onClick={()=>refresh()}>Buscar</button>
+             <button className='search-btn' onClick={()=>refresh()}>Buscar</button>
              
             </div>
-            <select name="" id="">
+            {/*<select name="" id="">
                 {}
-            </select>
+    </select>*/}
             
             {pokemonPagined.map(poke=>(
                 <PokeCard
@@ -70,7 +78,7 @@ const Pokedex = () => {
             ))}
             <button onClick={()=>setPage(page+1)} disabled={page === allpages} >Siguiente</button>
             
-            
+            </div>
         </div>
     );
 };

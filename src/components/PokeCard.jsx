@@ -21,28 +21,33 @@ const PokeCard = ({ url }) => {
 
 
     return (
-        <div>
-            <div onClick={() => navigate(`/pokeCard/${pokemon.id}`)}>
+        
+          <div className='content-card'>
+            <div className='pokecard' onClick={() => navigate(`/pokeCard/${pokemon.id}`)}>
+                <div className='header-card'>
                 <img src={pokemon.sprites?.front_default} alt="" />
+                </div>
                 <h1>{pokemon.name}</h1>
-                <h3>{pokemon.types?.map(type => (
-                    <ul key={type.type.url}>
+                <h3 className='text'>{pokemon.types?.map(type => (
+                    <ul className='list-pokemons' key={type.type.url}>
                         <li>{type.type.name}</li>
                     </ul>
 
                 ))}</h3>
-                <h3>Tipo</h3>
-                <ul>
-                    <li>{pokemon.stats?.[0].stat.name}{pokemon.stats?.[0].base_stat}</li>
-                    <li>{pokemon.stats?.[1].stat.name}{pokemon.stats?.[1].base_stat}</li>
-                    <li>{pokemon.stats?.[2].stat.name}{pokemon.stats?.[2].base_stat}</li>
-                    <li>{pokemon.stats?.[5].stat.name}{pokemon.stats?.[5].base_stat}</li>
+                <h3 className='type'>Tipo</h3>
+                <hr />
+                <ul className='list-pokemon'>
+                    <li>{pokemon.stats?.[0].stat.name} <br />  {pokemon.stats?.[0].base_stat}</li>
+                    <li>{pokemon.stats?.[1].stat.name} <br /> {pokemon.stats?.[1].base_stat}</li>
+                    <li>{pokemon.stats?.[2].stat.name} <br /> {pokemon.stats?.[2].base_stat}</li>
+                    <li>{pokemon.stats?.[5].stat.name} <br /> {pokemon.stats?.[5].base_stat}</li>
                 </ul>
 
             </div>
 
 
-        </div>
+          </div>
+        
     );
 };
 

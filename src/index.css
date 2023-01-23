@@ -5,6 +5,8 @@
 }
 
 body{
+    
+    font-family: "Inter", sans-serif;
     text-align: center;
 }
 
@@ -86,3 +88,137 @@ body{
     width: 120px;
     margin-top: 32px;
   }
+
+  .footer-pokedex{
+    background: linear-gradient(180deg,#dd1a1a 60%, #0c0c0c 50%);
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    height: 150px;
+    display: flex;
+    align-items: center;
+  }
+
+  .welcomes{
+    margin-top: 200px;
+    color: #dd1a1a;
+    text-align: start;
+    font-family: "Inter", sans-serif;
+  }
+
+  .sub-header{
+    color: #0c0c0c;
+    font-family: "Inter", sans-serif;
+  }
+
+  .logo-index{
+    width: 400px;
+    margin-left: 100px;
+  }
+
+  .pokeball-index{
+    position: absolute;
+    top: 43px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+  }
+
+  .header-welcome{
+    margin: auto;
+    width: 1200px;
+    background-color: whitesmoke;
+   padding: 2rem;
+    
+  }
+
+  .search-box{
+    display: flex;
+    margin-top: 20px;
+  }
+
+  .input-search{
+    height: 40px;
+    opacity: 70%;
+    width: 280px;
+    font-family: "Inter", sans-serif;
+  }
+
+  .search-btn{
+    width: 150px;
+    border: none;
+    background-color: #dd1a1a;
+    color: #0c0c0c;
+    font-family: "Inter", sans-serif;
+  }
+
+  .pokecard{
+    background-color: white;
+    text-align: center;
+    border: solid 4px lightskyblue;
+    border-radius: 5px;
+    height: 350px;
+  }
+
+  .pokecard >img{
+    width: 150px;
+    height: 150px;
+  }
+
+
+  .pokecard > h1{
+    color: lightgreen;
+  }
+
+
+  .content-card{
+    display: inline-block;
+   
+    padding: 0;
+    width: 260px;
+    padding: 10px;
+  }
+
+
+  .list-pokemon{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-left: 30px;
+    margin-top: 30px;
+    
+  }
+  
+  .list-pokemon > li{
+    display: flex;
+    width: 80px;
+  }
+
+  .list-pokemons{
+    list-style: none;
+   
+  }
+
+  .text{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 150px;
+    font-size: 13px;
+    gap: 1rem;
+    margin: auto;
+    color: lightcoral;
+  }
+ 
+  .header-card{
+    background: radial-gradient(ellipse farthest-corner at top center, #bbddd9 60%, #c0dbec 50%);
+  }
+
+  .type{
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    color: lightgray;
+  }
+
