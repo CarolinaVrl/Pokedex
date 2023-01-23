@@ -3,6 +3,8 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import pokedex_logo from '../assets/Images/image 11.png'
+import pokeball from '../assets/Images/Pokeball.png'
 
 const PokeDetails = () => {
     const { id } = useParams()
@@ -14,8 +16,16 @@ const PokeDetails = () => {
     }, [id])
     return (
         <div>
-            <img src={pokemon?.sprites?.other['official-artwork']?.front_default} alt="" />
-            <h4>{pokemon.id}</h4>
+            <div className='footer-pokedex' >
+            <img className='logo-index' src={pokedex_logo} alt="" />
+            <img className='pokeball-index' src={pokeball} alt="" />
+            </div>
+            <div className='bg-poke'>
+            <img className='sprite-detail' src={pokemon?.sprites?.other['official-artwork']?.front_default} alt="" />
+            </div>
+            <div className='id-container'>
+            <h4 className='poke-id'># {pokemon.id}</h4>
+            </div>
             <h1>{pokemon.name}</h1>
             <div> Tipos
                 {pokemon.types?.map(type => (
