@@ -29,7 +29,7 @@ const Pokedex = () => {
     }, [])
 
     const searchName = () => {
-        navigate(`/pokeCard/${names.toLocaleLowerCase}`)
+        navigate(`/pokeCard/${names.toLocaleLowerCase()}`)
 
     }
 
@@ -83,21 +83,24 @@ const Pokedex = () => {
                         ))}
                     </select>
                 </div>
-
-
                 {pokemonPagined.map(poke => (
                     <PokeCard
                         url={poke.url}
                         key={poke.url}
                     />
                 ))}
+                
+
+
+             
+
+            </div>
+           
                 <button onClick={() => setPage(page - 1)} disabled={page === 1}>Anterior</button>
                 {allNumbers.map(number => (
                     <button onClick={() => setPage(number)}>{number}</button>
                 ))}
                 <button onClick={() => setPage(page + 1)} disabled={page === allpages} >Siguiente</button>
-
-            </div>
         </div>
     );
 };

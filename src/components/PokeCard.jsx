@@ -3,10 +3,12 @@ import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import colours from '../assets/Images/colours'
 
 const PokeCard = ({ url }) => {
     const [pokemon, setPokemon] = useState({})
     const navigate = useNavigate()
+    const [colorPokemon, setColorPokemon] = useState('')
 
 
     useEffect(() => {
@@ -15,17 +17,20 @@ const PokeCard = ({ url }) => {
 
     }, [])
 
+    
+
+
 
 
 
 
 
     return (
-        
-          <div className='content-card'>
+
+        <div className='content-card'>
             <div className='pokecard' onClick={() => navigate(`/pokeCard/${pokemon.id}`)}>
-                <div className='header-card'>
-                <img src={pokemon.sprites?.front_default} alt="" />
+                <div className='header-card' style={{background:{colorPokemon}}}>
+                    <img src={pokemon.sprites?.front_default} alt="" />
                 </div>
                 <h1>{pokemon.name}</h1>
                 <h3 className='text'>{pokemon.types?.map(type => (
@@ -46,8 +51,8 @@ const PokeCard = ({ url }) => {
             </div>
 
 
-          </div>
-        
+        </div>
+
     );
 };
 
