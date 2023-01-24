@@ -30,7 +30,7 @@ const PokeCard = ({ url }) => {
         <div className='content-card'>
             <div className='pokecard' onClick={() => navigate(`/pokeCard/${pokemon.id}`)}>
                 <div className='header-card' style={{background:{colorPokemon}}}>
-                    <img src={pokemon.sprites?.front_default} alt="" />
+                    <img src={pokemon.sprites?.other['official-artwork']?.front_default} alt="" />
                 </div>
                 <h1>{pokemon.name}</h1>
                 <h3 className='text'>{pokemon.types?.map(type => (
