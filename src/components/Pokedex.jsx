@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
+
+import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import trainerName from '../store/slice/trainerName.slice'
@@ -13,6 +13,7 @@ const Pokedex = () => {
     const [pokemon, setPokemon] = useState([])
     const [names, setNames] = useState("")
     const [pokemonType, setPokemonType] = useState([])
+  
     const [pokemonForPage, setPokemonForPage] = useState(9)
     const [number, setNumber] = useState("")
 
@@ -21,11 +22,12 @@ const Pokedex = () => {
     useEffect(() => {
         axios.get("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1279")
             .then(res => setPokemon(res.data.results))
-
-        axios.get('https://pokeapi.co/api/v2/type/')
-            .then(res => setPokemonType(res.data.results))
-
-
+            .catch(error => console.error(error.response?.data));
+    }, [])
+    useEffect(() => {
+        axios.get(`https://pokeapi.co/api/v2/type/`)
+            .then(res => (setPokemonType(res.data.results)))
+            .catch(error => console.error(error.response?.data));
     }, [])
 
     const searchName = () => {
@@ -34,21 +36,21 @@ const Pokedex = () => {
     }
 
 
-    const searchTypePokemon = (url) => {
-        axios.get(url)
-        .then(res => setPokemon(res.data.pokemon))
+    const searchTypePokemon = (typeID) => {
+        axios.get(`https://pokeapi.co/api/v2/type/${typeID}`)
+        .then(res => setPokemon(res.data.pokemon.map(poke=>poke.pokemon)))
         .catch(error => console.error(error.response?.data));
+       console.warn(pokemon)
     }
-    console.log(pokemon)
-    
 
-    const paginatedPokemon =()=>{
+
+    const paginatedPokemon = () => {
         setPokemonForPage(number)
     }
-    
+
 
     const [page, setPage] = useState(1)
-    
+
     const lastPokemon = page * pokemonForPage
     const firstPokemon = lastPokemon - pokemonForPage
     const pokemonPagined = pokemon?.slice(firstPokemon, lastPokemon)
@@ -75,36 +77,36 @@ const Pokedex = () => {
 
                 </div>
                 <div>
-                    <input type='text' inputMode='numeric' placeholder='Pokemon por página' value={number} className='inputPaginad' onChange={e=>setNumber(e.target.value)} />
-                    <button onClick={()=>paginatedPokemon()}>Paginar</button>
+                    <input type='text' inputMode='numeric' placeholder='Pokemon por página' value={number} className='inputPaginad' onChange={e => setNumber(e.target.value)} />
+                    <button onClick={() => paginatedPokemon()}>Paginar</button>
                 </div>
 
                 <div>
-                    <select name="" id="" onChange={e => {searchTypePokemon  (e.target.value) }}>
+                    <select name="" id="" onChange={e => { searchTypePokemon(e.target.value) }}>
                         <option value="">Selecciona el Tipo del pokemon</option>
                         {pokemonType?.map((type) => (
-                            <option value={type.url} key={type.url} >{type.name}</option>
+                            <option value={type.name} key={type.url} >{type.name}</option>
                         ))}
                     </select>
                 </div>
-                {pokemonPagined?.map(poke => (
+                {pokemonPagined?.map((poke) => (
                     <PokeCard
-                        url={poke.url  }
-                        key={poke.url }
+                        url={poke.url}
+                        key={poke.url}
                     />
                 ))}
 
 
 
-             
+
 
             </div>
-           
-                <button onClick={() => setPage(page - 1)} disabled={page === 1}>Anterior</button>
-                {allNumbers.map(number => (
-                    <button onClick={() => setPage(number)}>{number}</button>
-                ))}
-                <button onClick={() => setPage(page + 1)} disabled={page === allpages} >Siguiente</button>
+
+            <button onClick={() => setPage(page - 1)} disabled={page === 1}>Anterior</button>
+            {allNumbers.map(number => (
+                <button onClick={() => setPage(number)}>{number}</button>
+            ))}
+            <button onClick={() => setPage(page + 1)} disabled={page === allpages} >Siguiente</button>
         </div>
     );
 };
