@@ -92,7 +92,7 @@ body{
   .footer-pokedex{
     background: linear-gradient(180deg,#dd1a1a 60%, #0c0c0c 50%);
     width: 100vw;
-    position: absolute;
+    position:absolute;
     top: 0;
     height: 150px;
     display: flex;
@@ -239,7 +239,7 @@ body{
   margin-top: 250px;
   height: 180px;
   background: linear-gradient(178.92deg, #7EC6C5 0.92%, #ABDAC6 47.96%, #CAE099 99.08%);
-
+  
 }
 
 .id-container{
@@ -259,3 +259,95 @@ body{
 .poke-id{
   
 }
+
+.content-detail{
+  width: 1000px;
+  margin: auto;
+  background-color: #FFFFFF;
+  box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.15);
+}
+
+.hr-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.hr-container > hr{
+  
+    height: 1px;
+    width: 35%;
+    background-color: #9F9F9F;
+    opacity: 30%;
+}
+
+.weight{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 12px;
+  font-weight: 100;
+  color: #0F0F2D;
+}
+
+.weight-detail{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  font-weight: bold;
+  color: #0F0F2D;
+}
+
+.type-habilities{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  
+}
+
+.content-type{
+  background-color: transparent;
+  display: flex;
+  margin-top: 15px;
+  justify-content: space-evenly;
+}
+
+.type-name{
+  background-color: #85C9C5;
+  height: 30px;
+  width: 150px;
+  text-align: center;
+  padding: 5px;
+  border-radius: 2px;
+  font-weight: 500;
+  color: #FFFFFF;
+}
+
+.hr-stats{
+  display: flex;
+  align-items: center;
+  
+  gap: 1rem;
+  margin-top: 100px;
+  margin-left: 58px;
+  padding-right: 55px;
+}
+
+.poke-fill{
+  height: 50px;
+  height: 50px;
+  filter: opacity(0.1) drop-shadow(0 0 0 red);
+}
+
+.hr-stats > hr{
+  
+  height: 1px;
+  width: 95%;
+  background-color: #9F9F9F;
+  opacity: 30%;
+  
+}
+
