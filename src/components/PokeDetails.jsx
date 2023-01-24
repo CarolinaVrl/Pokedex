@@ -25,7 +25,10 @@ const PokeDetails = () => {
             </div>
             <div className='id-container'>
             <h4 className='poke-id'># {pokemon.id}</h4>
+           
             </div>
+            <h4>Peso <span>{pokemon.weight}</span></h4>
+            <h4>Altura <span>{pokemon.height}</span></h4>
             <h1>{pokemon.name}</h1>
             <div> Tipos
                 {pokemon.types?.map(type => (
