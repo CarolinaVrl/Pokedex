@@ -35,8 +35,12 @@ const Pokedex = () => {
 
 
     const searchTypePokemon = (url) => {
-        axios.get(url).then((res) => { setPokemon(res.data) })
+        axios.get(url)
+        .then(res => setPokemon(res.data.pokemon))
+        .catch(error => console.error(error.response?.data));
     }
+    console.log(pokemon)
+    
 
     const paginatedPokemon =()=>{
         setPokemonForPage(number)
@@ -47,8 +51,8 @@ const Pokedex = () => {
     
     const lastPokemon = page * pokemonForPage
     const firstPokemon = lastPokemon - pokemonForPage
-    const pokemonPagined = pokemon.slice(firstPokemon, lastPokemon)
-    const allpages = Math.ceil(pokemon.length / pokemonForPage)
+    const pokemonPagined = pokemon?.slice(firstPokemon, lastPokemon)
+    const allpages = Math.ceil(pokemon?.length / pokemonForPage)
     const allNumbers = []
     for (let i = 1; i <= allpages; i++) {
         allNumbers.push(i)
@@ -78,18 +82,18 @@ const Pokedex = () => {
                 <div>
                     <select name="" id="" onChange={e => {searchTypePokemon  (e.target.value) }}>
                         <option value="">Selecciona el Tipo del pokemon</option>
-                        {pokemonType.map((type) => (
+                        {pokemonType?.map((type) => (
                             <option value={type.url} key={type.url} >{type.name}</option>
                         ))}
                     </select>
                 </div>
-                {pokemonPagined.map(poke => (
+                {pokemonPagined?.map(poke => (
                     <PokeCard
-                        url={poke.url}
-                        key={poke.url}
+                        url={poke.url  }
+                        key={poke.url }
                     />
                 ))}
-                
+
 
 
              
