@@ -150,6 +150,7 @@ body{
     background-color: #dd1a1a;
     color: #0c0c0c;
     font-family: "Inter", sans-serif;
+    font-weight: 500;
   }
 
   .pokecard{
@@ -209,7 +210,7 @@ body{
     font-size: 13px;
     gap: 1rem;
     margin: auto;
-    color: lightcoral;
+    color:#4F4F4F;
   }
  
   .header-card{
@@ -224,4 +225,37 @@ body{
 
 .inputPaginad{
   overflow-y: hidden;
+}
+
+.sprite-detail{
+ height: 340px;
+ width: 314px;
+ position: absolute;
+ left: 550px;
+ top: 135px;
+}
+
+.bg-poke{
+  margin-top: 250px;
+  height: 180px;
+  background: linear-gradient(178.92deg, #7EC6C5 0.92%, #ABDAC6 47.96%, #CAE099 99.08%);
+
+}
+
+.id-container{
+  width: 58px;
+  height: 34px;
+  background-color: transparent;
+  color: #416460;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  border: 1px solid #D3D3D3;
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+.poke-id{
+  
 }
