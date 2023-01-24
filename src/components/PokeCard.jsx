@@ -16,7 +16,8 @@ const PokeCard = ({ url }) => {
             .then(res => setPokemon(res.data))
 
     }, [])
-
+    
+    const backgroundSelect = colours[pokemon.types?.[0].type.name]
     
 
 
@@ -28,13 +29,14 @@ const PokeCard = ({ url }) => {
     return (
 
         <div className='content-card'>
-            <div className='pokecard' onClick={() => navigate(`/pokeCard/${pokemon.id}`)}>
-                <div className='header-card' style={{background:{colorPokemon}}}>
+            <div className={colorPokemon} onClick={() => navigate(`/pokeCard/${pokemon.id}`)}>
+                <div className='header-card' style={{background:backgroundSelect}} >
+              
                     <img src={pokemon.sprites?.other['official-artwork']?.front_default} alt="" />
                 </div>
                 <h1>{pokemon.name}</h1>
                 <h3 className='text'>{pokemon.types?.map(type => (
-                    <ul className='list-pokemons' key={type.type.url}>
+                    <ul className='list-pokemons'  key={type.type.url}>
                         <li>{type.type.name}</li>
                     </ul>
 
