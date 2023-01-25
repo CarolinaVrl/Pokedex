@@ -81,21 +81,21 @@ const Pokedex = () => {
                     <input type="text" className='input-search' placeholder='Busca un pokemon' value={names} onChange={e => setNames(e.target.value)}
                     />
                     <button className='search-btn' onClick={() => searchName()}>Buscar</button>
-
-                </div>
-                <div>
-                    <input type='text' inputMode='numeric' placeholder='Pokemon por página' value={number} className='inputPaginad' onChange={e => setNumber(e.target.value)} />
-                    <button onClick={() => paginatedPokemon()}>Paginar</button>
-                </div>
-
-                <div>
-                    <select name="" id="" onChange={e => { searchTypePokemon(e.target.value) }}>
+                    <div className='select-box'>
+                    <select className='select-btn' name="" id="" onChange={e => { searchTypePokemon(e.target.value) }}>
                         <option value="">Selecciona el Tipo del pokemon</option>
                         {pokemonType?.map((type) => (
                             <option value={type.name} key={type.url} >{type.name}</option>
                         ))}
                     </select>
                 </div>
+                </div>
+                <div className='paginated-box'>
+                    <input type='text' inputMode='numeric' placeholder='Pokemon por página' value={number} className='inputPaginad' onChange={e => setNumber(e.target.value)} />
+                    <button className='btn-paginated' onClick={() => paginatedPokemon()}>Paginar</button>
+                </div>
+
+                
                 {pokemonPagined?.map((poke) => (
                     <PokeCard
                         url={poke.url}

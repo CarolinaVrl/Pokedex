@@ -30,9 +30,9 @@ const PokeCard = ({ url }) => {
             <div  onClick={() => navigate(`/pokeCard/${pokemon.id}`)}>
                 <div className='header-card' style={{background:backgroundSelect}} >
               
-                    <img src={pokemon.sprites?.other['official-artwork']?.front_default} alt="" />
+                    <img className='img-pokecard' src={pokemon.sprites?.other['official-artwork']?.front_default} alt="" />
                 </div>
-                <h1>{pokemon.name}</h1>
+                <h1 className='name-card'>{pokemon.name}</h1>
                 <h3 className='text'>{pokemon.types?.map(type => (
                     <ul className='list-pokemons'  key={type.type.url}>
                         <li>{type.type.name}</li>
@@ -40,7 +40,7 @@ const PokeCard = ({ url }) => {
 
                 ))}</h3>
                 <h3 className='type'>Tipo</h3>
-                <hr />
+                <hr className='line-stats' />
                 <ul className='list-pokemon'>
                     <li>{pokemon.stats?.[0].stat.name} <br />  {pokemon.stats?.[0].base_stat}</li>
                     <li>{pokemon.stats?.[1].stat.name} <br /> {pokemon.stats?.[1].base_stat}</li>

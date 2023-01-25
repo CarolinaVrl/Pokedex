@@ -156,6 +156,27 @@ input {
 .search-box {
   display: flex;
   margin-top: 20px;
+    margin-bottom: 20px;
+    
+  }
+
+  .select-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 400px;
+    background-color: #FFFFFF;
+    height: 40px;
+    width: 300px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
+  }
+
+  .select-btn{
+    height: 30px;
+    border: none;
+    color: #0F0F2D;
+    background-color: transparent;
+    cursor: pointer;
 }
 
 .input-search {
@@ -165,14 +186,14 @@ input {
   font-family: "Inter", sans-serif;
 }
 
-.search-btn {
-  width: 150px;
-  border: none;
-  background-color: #dd1a1a;
-  color: #0c0c0c;
-  font-family: "Inter", sans-serif;
-  font-weight: 500;
-}
+  .search-btn{
+    width: 150px;
+    border: none;
+    background-color: #dd1a1a;
+    color: #0c0c0c;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+  }
 
 .pokecard {
   background-color: white;
@@ -192,14 +213,18 @@ input {
   color: lightgreen;
 }
 
+  .img-pokecard{
+    height: 150px;
+    
+  }
 
-.content-card {
-  display: inline-block;
-
-  padding: 0;
-  width: 260px;
-  padding: 10px;
-}
+  .content-card{
+    display: inline-block;
+   
+    padding: 0;
+    width: 260px;
+    padding: 10px;
+  }
 
 
 .list-pokemon {
@@ -223,20 +248,20 @@ input {
 
 }
 
-.text {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 150px;
-  font-size: 13px;
-  gap: 1rem;
-  margin: auto;
-  color: #4F4F4F;
-}
-
-.header-card {
-  background: radial-gradient(ellipse farthest-corner at top center, #bbddd9 60%, #c0dbec 50%);
-}
+  .text{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 150px;
+    font-size: 13px;
+    gap: 1rem;
+    margin: auto;
+    color:#4F4F4F;
+  }
+ 
+  .header-card{
+    background: radial-gradient(ellipse farthest-corner at top center, #bbddd9 60%, #c0dbec 50%);
+  }
 
 .type {
   font-family: "Inter", sans-serif;
@@ -277,9 +302,11 @@ input {
   margin-top: 15px;
 }
 
-.poke-id {}
+.poke-id{
+  
+}
 
-.content-detail {
+.content-detail{
   width: 1000px;
   margin: auto;
   background-color: #FFFFFF;
@@ -434,7 +461,7 @@ input {
 .movements {
   width: 1000px;
   margin: auto;
-  height: 1400px;
+  height: auto;
   background-color: #FFFFFF;
   box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.15);
 
@@ -472,4 +499,20 @@ input {
   width: 70%;
   background-color: #9F9F9F;
   opacity: 30%;
+}
+
+.btn-back{
+  height: 40px;
+  width: 100px;
+  margin-top: 30px;
+  border: none;
+  cursor: pointer;
+  background-color: #CAE099;
+  border-radius: 10px;
+  
+}
+
+.btn-back:hover{
+  background-color: lightcoral;
+  transition: 0.5s;
 }
