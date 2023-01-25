@@ -135,6 +135,27 @@ body{
   .search-box{
     display: flex;
     margin-top: 20px;
+    margin-bottom: 20px;
+    
+  }
+
+  .select-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 400px;
+    background-color: #FFFFFF;
+    height: 40px;
+    width: 300px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
+  }
+
+  .select-btn{
+    height: 30px;
+    border: none;
+    color: #0F0F2D;
+    background-color: transparent;
+    cursor: pointer;
   }
 
   .input-search{
@@ -151,6 +172,14 @@ body{
     color: #0c0c0c;
     font-family: "Inter", sans-serif;
     font-weight: 500;
+    cursor: pointer;
+  }
+
+  .btn-paginated{
+    height: 48px;
+    width: 150px;
+    background-color: #D93F3F;
+    border: none;
   }
 
   .pokecard{
@@ -171,13 +200,19 @@ body{
     color: lightgreen;
   }
 
+  .img-pokecard{
+    height: 150px;
+    
+  }
 
   .content-card{
     display: inline-block;
-   
     padding: 0;
     width: 260px;
-    padding: 10px;
+    border-radius: 10px;
+    border: 7px solid lightslategray;
+    margin-left: 10px;
+    margin-bottom: 10px;
   }
 
 
@@ -214,7 +249,14 @@ body{
   }
  
   .header-card{
+    display: flex;
+    justify-content: center;
+    max-height: 100px;
     background: radial-gradient(ellipse farthest-corner at top center, #bbddd9 60%, #c0dbec 50%);
+  }
+
+  .name-card{
+    margin-top: 40px;
   }
 
   .type{
@@ -256,8 +298,17 @@ body{
   margin-top: 15px;
 }
 
-.poke-id{
-  
+.paginated-box{
+  margin-bottom: 30px;
+}
+
+.line-stats{
+  height: 1px;
+  width: 100%;
+  background-color: #E5E5E5;
+  margin: auto;
+  opacity: 6%;
+  margin-top: 5px;
 }
 
 .content-detail{
@@ -414,7 +465,7 @@ body{
 .movements{
   width: 1000px;
   margin: auto;
-  height: 1400px;
+  height: auto;
   background-color: #FFFFFF;
   box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.15);
   
@@ -452,4 +503,20 @@ body{
     width: 70%;
     background-color: #9F9F9F;
     opacity: 30%;
+}
+
+.btn-back{
+  height: 40px;
+  width: 100px;
+  margin-top: 30px;
+  border: none;
+  cursor: pointer;
+  background-color: #CAE099;
+  border-radius: 10px;
+  
+}
+
+.btn-back:hover{
+  background-color: lightcoral;
+  transition: 0.5s;
 }

@@ -86,7 +86,7 @@ const PokeDetails = () => {
                     </div>
                 </div>
                
-                <button onClick={() => navigate('/pokedex')}>Back!</button>
+                
 
 
 
@@ -104,6 +104,7 @@ const PokeDetails = () => {
                         </div>
                     ))}
                 </div>
+                <button className='btn-back' onClick={() => navigate('/pokedex')}>Back!</button>
         </div>
     );
 };
