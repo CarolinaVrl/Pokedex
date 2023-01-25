@@ -36,18 +36,18 @@ const PokeDetails = () => {
                     <hr />
                 </div>
                 <div className='weight'>
-                <h4>Peso</h4>
-                <h4>Altura </h4>
+                    <h4>Peso</h4>
+                    <h4>Altura </h4>
                 </div>
                 <div className='weight-detail'>
-                <span>{pokemon.weight}</span>
-                <span>{pokemon.height}</span>
+                    <span>{pokemon.weight}</span>
+                    <span>{pokemon.height}</span>
                 </div>
                 <div className='type-habilities'>
-                <h4>Tipo</h4>
-                <h4>Habilidades</h4>
+                    <h4>Tipo</h4>
+                    <h4>Habilidades</h4>
                 </div>
-                <div className='content-type'> 
+                <div className='content-type'>
                     {pokemon.types?.map(type => (
                         <div key={type.type.url} >
                             <div className='type-name'>{type.type.name}</div></div>
@@ -59,34 +59,45 @@ const PokeDetails = () => {
                     ))}
                 </div>
                 <div className='hr-stats'>
-                <h4>Stats</h4>
-                <hr />
-                <img className='poke-fill' src={pokedibujo} alt="" />
+                    <h4>Stats</h4>
+                    <hr />
+                    <img className='poke-fill' src={pokedibujo} alt="" />
                 </div>
-                <div>
-                    <ul>
-                        <li>{pokemon.stats?.[0].stat.name}{pokemon.stats?.[0].base_stat}/150</li>
-                        <li>{pokemon.stats?.[1].stat.name}{pokemon.stats?.[1].base_stat}/150</li>
-                        <li>{pokemon.stats?.[2].stat.name}{pokemon.stats?.[2].base_stat}/150</li>
-                        <li>{pokemon.stats?.[5].stat.name}{pokemon.stats?.[5].base_stat}/150</li>
-                    </ul>
+                
 
+                <div className="stats">
+                    
+                    <div className="bars-containers">
+                        {pokemon.stats?.map((pokemonStats) => (
+                            <div key={pokemonStats.stat.name} className="bar-stat">
+                                <h3>{pokemonStats.stat.name}</h3>
+                                <div className="progress-bar-container">
+                                    <div
+                                        className="progress-bar-status"
+                                        style={{ width: `${pokemonStats.base_stat * 0.5}%` }}
+                                    ></div>
+                                </div>
+                                <p>{pokemonStats.base_stat}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
-                <div>
-                    <h2>Movimientos <span><hr /></span>
-                    </h2>
-                    {pokemon.moves?.map(move => (
-                        <div key={move.move.url}>
-                            <div>{move.move.name}</div>
-                        </div>
-                    ))}
-                </div>
+               
                 <button onClick={() => navigate('/pokedex')}>Back!</button>
 
 
 
 
             </div>
+            <div className='movements'>
+                    <h2>Movements <span><hr /></span>
+                    </h2>
+                    {pokemon.moves?.map(move => (
+                        <div className='move-box' key={move.move.url}>
+                            <div className='move-content'>{move.move.name}</div>
+                        </div>
+                    ))}
+                </div>
         </div>
     );
 };
