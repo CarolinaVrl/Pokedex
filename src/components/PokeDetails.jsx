@@ -15,6 +15,9 @@ const PokeDetails = () => {
         axios.get(`https://pokeapi.co/api/v2/pokemon/${id}/`)
             .then(res => setPokemon(res.data))
     }, [id])
+
+    const movimientsPokemon =  pokemon.moves?.slice(0,20)
+    
     return (
         <div>
             <div className='footer-pokedex' >
@@ -95,7 +98,7 @@ const PokeDetails = () => {
                     <hr />
                     <img className='poke-fill' src={pokedibujo} alt="" />
                     </div>
-                    {pokemon.moves?.map(move => (
+                    {movimientsPokemon?.map(move => (
                         <div className='move-box' key={move.move.url}>
                             <div className='move-content'>{move.move.name}</div>
                         </div>

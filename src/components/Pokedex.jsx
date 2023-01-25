@@ -48,7 +48,7 @@ const Pokedex = () => {
         setPokemonForPage(number)
     }
 
-
+//    Paginated Buttons
     const [page, setPage] = useState(1)
 
     const lastPokemon = page * pokemonForPage
