@@ -6,7 +6,7 @@ import colours from '../assets/Images/colours'
 const PokeCard = ({ url }) => {
     const [pokemon, setPokemon] = useState({})
     const navigate = useNavigate()
-    const [colorPokemon, setColorPokemon] = useState('')
+   
 
 
     useEffect(() => {
@@ -27,7 +27,7 @@ const PokeCard = ({ url }) => {
     return (
 
         <div className='content-card'>
-            <div className={colorPokemon} onClick={() => navigate(`/pokeCard/${pokemon.id}`)}>
+            <div  onClick={() => navigate(`/pokeCard/${pokemon.id}`)}>
                 <div className='header-card' style={{background:backgroundSelect}} >
               
                     <img src={pokemon.sprites?.other['official-artwork']?.front_default} alt="" />
