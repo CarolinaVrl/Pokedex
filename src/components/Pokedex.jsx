@@ -48,7 +48,7 @@ const Pokedex = () => {
         setPokemonForPage(number)
     }
 
-//    Paginated Buttons
+//    Paginated 
     const [page, setPage] = useState(1)
 
     const lastPokemon = page * pokemonForPage
@@ -59,7 +59,14 @@ const Pokedex = () => {
     for (let i = 1; i <= allpages; i++) {
         allNumbers.push(i)
     }
+// paginated buttons
+ const [inputPage, setInputPage] = useState('')
+ const firstbutton= page-5 || page -1
+ const lastbutton = firstbutton+5
+ const buttonsFive = allNumbers.slice(firstbutton,lastbutton)
+ 
 
+ 
     return (
         <div>
             <div className='footer-pokedex'>
@@ -101,12 +108,18 @@ const Pokedex = () => {
 
 
             </div>
-
-            <button onClick={() => setPage(page - 1)} disabled={page === 1}>Anterior</button>
-            {allNumbers.map(number => (
-                <button onClick={() => setPage(number)}>{number}</button>
+            <div>
+            <button onClick={() => setPage(page - 1)} disabled={page === 1}><i className="fa-solid fa-arrow-left-from-line"></i></button>
+            {buttonsFive?.map(number => (
+                <button key={number} onClick={() => setPage(number)}>{number}</button>
             ))}
-            <button onClick={() => setPage(page + 1)} disabled={page === allpages} >Siguiente</button>
+            <button onClick={() => setPage(page + 1)}  disabled={page === allpages} ><i className="fa-solid fa-arrow-right-from-line"></i></button>
+            
+            </div>
+            <input type="text" placeholder={`0-${allpages}`} value={inputPage}  onChange={e=>setInputPage(e.target.value)} /> <button onClick={()=>setPage(inputPage)}>Buscar!</button> 
+          
+
+           
         </div>
     );
 };
