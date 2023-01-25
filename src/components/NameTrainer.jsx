@@ -15,13 +15,7 @@ const NameTrainer = () => {
     const navigate = useNavigate()
     const [text, setText] = useState('')
     const [change, setChange] = useState(true)
-    const [isNigth, setIsNigth] = useState(false)
-    const body = document.body
-    if (isNigth){
-        body.classList.add('bodyDark')
-    }else{
-       body.classList.remove('bodyDark') 
-    }
+  
 
 
 
@@ -37,7 +31,7 @@ const NameTrainer = () => {
     }
     return (
         <div className='login-container'>
-            <div><i onClick={()=>setIsNigth(!isNigth)} class={`fa-solid fa-toggle-${isNigth ? 'on' : 'off'}`}></i></div>
+            
             
                
            
