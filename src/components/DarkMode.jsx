@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import hunter from '../assets/Images/Hunter.png'
+import ligth from '../assets/Images/ligth.png'
 
 const DarkMode = () => {
     const [isNigth, setIsNigth] = useState(false)
@@ -10,7 +12,9 @@ const DarkMode = () => {
     }
     return (
         <div>
-            <div><i style={{fontSize:`20px`}} onClick={()=>setIsNigth(!isNigth)} className={`fa-solid fa-toggle-${isNigth ? 'on' : 'off'}`}></i></div>
+            <div><i onClick={()=>setIsNigth(!isNigth)} className={`fa-solid toggle fa-toggle-${isNigth ? 'on' : 'off'}`}></i>
+            <img className={isNigth? 'hide' : 'hunter'} src={hunter} alt="" /></div>
+            <img className={isNigth? 'hunter' : 'hide'} src={ligth} alt="" />
             
         </div>
     );

@@ -8,12 +8,14 @@ import trainerName from '../store/slice/trainerName.slice'
 import PokeCard from './PokeCard';
 import pokedex_logo from '../assets/Images/image 11.png'
 import pokeball from '../assets/Images/Pokeball.png'
+import pikachu from '../assets/Images/Pikachu.png'
+
 
 const Pokedex = () => {
     const [pokemon, setPokemon] = useState([])
     const [names, setNames] = useState("")
     const [pokemonType, setPokemonType] = useState([])
-  
+
     const [pokemonForPage, setPokemonForPage] = useState(9)
     const [number, setNumber] = useState("")
 
@@ -38,9 +40,9 @@ const Pokedex = () => {
 
     const searchTypePokemon = (typeID) => {
         axios.get(`https://pokeapi.co/api/v2/type/${typeID}`)
-        .then(res => setPokemon(res.data.pokemon.map(poke=>poke.pokemon)))
-        .catch(error => console.error(error.response?.data));
-       console.warn(pokemon)
+            .then(res => setPokemon(res.data.pokemon.map(poke => poke.pokemon)))
+            .catch(error => console.error(error.response?.data));
+       
     }
 
 
@@ -48,7 +50,7 @@ const Pokedex = () => {
         setPokemonForPage(number)
     }
 
-//    Paginated 
+    //    Paginated 
     const [page, setPage] = useState(1)
 
     const lastPokemon = page * pokemonForPage
@@ -59,14 +61,14 @@ const Pokedex = () => {
     for (let i = 1; i <= allpages; i++) {
         allNumbers.push(i)
     }
-// paginated buttons
- const [inputPage, setInputPage] = useState('')
- const firstbutton= page-1
- const lastbutton = firstbutton+5
- const buttonsFive = allNumbers.slice(firstbutton,lastbutton)
- 
+    // paginated buttons
+    const [inputPage, setInputPage] = useState('')
+    const firstbutton = page - 1
+    const lastbutton = firstbutton + 5
+    const buttonsFive = allNumbers.slice(firstbutton, lastbutton)
 
- 
+
+
     return (
         <div>
             <div className='footer-pokedex'>
@@ -82,20 +84,21 @@ const Pokedex = () => {
                     />
                     <button className='search-btn' onClick={() => searchName()}>Buscar</button>
                     <div className='select-box'>
-                    <select className='select-btn' name="" id="" onChange={e => { searchTypePokemon(e.target.value) }}>
-                        <option value="">Selecciona el Tipo del pokemon</option>
-                        {pokemonType?.map((type) => (
-                            <option value={type.name} key={type.url} >{type.name}</option>
-                        ))}
-                    </select>
-                </div>
+                        <select className='select-btn' name="" id="" onChange={e => { searchTypePokemon(e.target.value) }}>
+                            <option value={pokemon}>Selecciona el Tipo del pokemon</option>
+                            
+                            {pokemonType?.map((type) => (
+                                <option value={type.name} key={type.url} >{type.name}</option>
+                            ))}
+                        </select>
+                    </div>
                 </div>
                 <div className='paginated-box'>
                     <input type='text' inputMode='numeric' placeholder='Pokemon por página' value={number} className='inputPaginad' onChange={e => setNumber(e.target.value)} />
                     <button className='btn-paginated' onClick={() => paginatedPokemon()}>Paginar</button>
                 </div>
 
-                
+
                 {pokemonPagined?.map((poke) => (
                     <PokeCard
                         url={poke.url}
@@ -108,18 +111,23 @@ const Pokedex = () => {
 
 
             </div>
-            <div>
-            <button onClick={() => setPage(page - 1)} disabled={page === 1}><i className="fa-solid fa-arrow-left-from-line"></i></button>
-            {buttonsFive?.map(number => (
-                <button key={number} onClick={() => setPage(number)}>{number}</button>
-            ))}
-            <button onClick={() => setPage(page + 1)}  disabled={page === allpages} ><i className="fa-solid fa-arrow-right-from-line"></i></button>
-            
-            </div>
-            <input type="text" placeholder={`0-${allpages}`} value={inputPage}  onChange={e=>setInputPage(e.target.value)} /> <button onClick={()=>setPage(inputPage)}>Buscar!</button> 
-          
+            <div className='paginatedButton'>
+                <button onClick={() => setPage(page - 1)} disabled={page === 1}><i className="fa-solid fa-caret-left"></i></button>
+                {buttonsFive?.map(number => (
+                    <button key={number} onClick={() => setPage(number)}>{number}</button>
+                ))}
+                <button onClick={() => setPage(page + 1)} disabled={page === allpages} ><i className="fa-solid fa-caret-right"></i></button>
 
-           
+            </div>
+            <div className='input_page_name'>
+                
+                <input className='input_page' type="text" placeholder={`0-${allpages}`} value={inputPage} onChange={e => setInputPage(e.target.value)} /> <button className='seacrh_input_name' onClick={() => setPage(inputPage)}>Buscar!</button>
+                <img className='input_pag_pikachu' src={pikachu} alt="" />
+            </div>
+            
+
+
+
         </div>
     );
 };
