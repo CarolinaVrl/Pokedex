@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { HashRouter, Route, Routes } from 'react-router-dom'
+import DarkMode from './components/DarkMode'
 
 import NameTrainer from './components/NameTrainer'
 import PokeCard from './components/PokeCard'
@@ -14,6 +15,7 @@ function App() {
 
   return (
     <HashRouter>
+     <DarkMode/>
       <Routes>
         
         <Route path='/' element={<NameTrainer />} />

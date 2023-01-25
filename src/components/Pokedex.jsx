@@ -61,7 +61,7 @@ const Pokedex = () => {
     }
 // paginated buttons
  const [inputPage, setInputPage] = useState('')
- const firstbutton= page-5 || page -1
+ const firstbutton= page-1
  const lastbutton = firstbutton+5
  const buttonsFive = allNumbers.slice(firstbutton,lastbutton)
  
