@@ -90,8 +90,11 @@ const PokeDetails = () => {
 
             </div>
             <div className='movements'>
-                    <h2>Movements <span><hr /></span>
-                    </h2>
+                    <div className='hr-footer'>
+                    <h2>Movements </h2>
+                    <hr />
+                    <img className='poke-fill' src={pokedibujo} alt="" />
+                    </div>
                     {pokemon.moves?.map(move => (
                         <div className='move-box' key={move.move.url}>
                             <div className='move-content'>{move.move.name}</div>

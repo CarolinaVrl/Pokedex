@@ -438,3 +438,18 @@ body{
   font-weight: 400;
   font-size: 14px;
 }
+
+.hr-footer{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 22px;
+  padding: 30px;
+}
+
+.hr-footer > hr{
+    height: 1px;
+    width: 70%;
+    background-color: #9F9F9F;
+    opacity: 30%;
+}
