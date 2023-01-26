@@ -1,6 +1,7 @@
 :root {
   --background: white;
-  --welcome: red
+  --welcome: red;
+  --letter:black
 }
 
 * {
@@ -26,7 +27,8 @@ button:hover{
 
 .bodyDark {
   --background: #000;
-  --welcome: yellow
+  --welcome: yellow;
+  --letter: white
 }
 
 .toggle {
@@ -81,6 +83,7 @@ button:hover{
 .sub-title {
   font-family: "Inter", sans-serif;
   font-weight: bold;
+  color: var(--letter);
 }
 
 .button-section {
@@ -215,7 +218,7 @@ input {
   border: solid 4px lightskyblue;
   border-radius: 5px;
   height: 350px;
-
+  
 }
 
 .pokecard>img {
@@ -620,6 +623,9 @@ input {
   z-index: 5;
   width: 200px;
   height: 50px;
+  background-color: var(--welcome);
+  font-weight: bold;
+  color: var(--background);
 }
 .input_pag_pikachu{
   position: absolute;
