@@ -85,10 +85,10 @@ const Pokedex = () => {
                     <button className='search-btn' onClick={() => searchName()}>Buscar</button>
                     <div className='select-box'>
                         <select className='select-btn' name="" id="" onChange={e => { searchTypePokemon(e.target.value) }}>
-                            <option className='option'  value={pokemon}>Selecciona el Tipo del pokemon</option>
+                            <option   value={pokemon}>Selecciona el Tipo del pokemon</option>
                             
                             {pokemonType?.map((type) => (
-                                <option className='option' value={type.name} key={type.url} >{type.name}</option>
+                                <option className='option' style={{background :'transparent'}} value={type.name} key={type.url} >{type.name}</option>
                             ))}
                         </select>
                     </div>

@@ -202,8 +202,13 @@ input {
   cursor: pointer;  
   
 }
-.option{
-  background-color:rgba(red, salmon, peru, .3);
+.option {
+  
+  font-weight: bold;
+}
+
+.option:hover {
+  font-weight: lighter;
 }
 
 .input-search {
@@ -266,10 +271,13 @@ input {
 }
 
 .cards {
-  display: inline;
+  width: 33%;
+  display:inline-flex;
+  justify-content: center;
+  flex-direction: row;
   border-radius: 4px;
 
-  width: 260px;
+  
   padding: 20px;
 
 }
@@ -298,7 +306,6 @@ input {
   display: flex;
   font-size: 12px;
   color: #9F9F9F;
-  ;
 
   flex-wrap: wrap;
   justify-content: space-between;
